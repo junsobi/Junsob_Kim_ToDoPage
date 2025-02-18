@@ -1,10 +1,10 @@
+import KanbanBoard from "@/components/kanban-board/kanban-board";
+
 export default function Home() {
   return (
-    <div className="">
-      <main className="">
-        <h1 className="">Kanban-todo</h1>
-      </main>
-      <footer></footer>
-    </div>
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Kanban Board</h1>
+      <KanbanBoard />
+    </main>
   );
 }
