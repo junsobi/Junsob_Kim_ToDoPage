@@ -9,21 +9,23 @@ import {
   AlertDialogTitle,
 } from "@/components/ui";
 
-interface DeleteBoardDialogProps {
+interface ConfirmDialogProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: () => void;
   title: string;
   description: string;
+  confirmText?: string;
 }
 
-export default function DeleteBoardDialog({
+export default function ConfirmDialog({
   isOpen,
   onClose,
   onConfirm,
   title,
   description,
-}: DeleteBoardDialogProps) {
+  confirmText = "삭제",
+}: ConfirmDialogProps) {
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
       <AlertDialogContent>
@@ -33,7 +35,9 @@ export default function DeleteBoardDialog({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>취소</AlertDialogCancel>
-          <AlertDialogAction onClick={onConfirm}>삭제</AlertDialogAction>
+          <AlertDialogAction onClick={onConfirm}>
+            {confirmText}
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
