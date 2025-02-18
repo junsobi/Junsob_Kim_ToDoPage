@@ -21,7 +21,7 @@ export default function BoardItem({ board }: BoardItemProps) {
           onDelete={() => deleteBoard(board.id)}
         />
         <h2 className="text-lg font-semibold">{board.title}</h2>
-        <TaskList tasks={board.tasks} />
+        <TaskList boardId={board.id} tasks={board.tasks} />
         <AddTaskForm boardId={board.id} />
       </CardContent>
     </Card>

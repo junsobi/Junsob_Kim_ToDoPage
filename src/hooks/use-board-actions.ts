@@ -1,9 +1,10 @@
 import { useKanbanStore } from "@/store";
 
 export function useBoardActions() {
-  const { deleteBoard } = useKanbanStore();
+  const { addBoard, deleteBoard } = useKanbanStore();
 
   return {
+    addBoard,
     deleteBoard,
   };
 }

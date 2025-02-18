@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button, Input } from "@/components/ui";
-import { useKanbanStore } from "@/store";
+import { useTaskActions } from "@/hooks/use-task-actions";
 
 interface AddTaskFormProps {
   boardId: string;
@@ -9,7 +9,7 @@ interface AddTaskFormProps {
 
 export default function AddTaskForm({ boardId }: AddTaskFormProps) {
   const [taskText, setTaskText] = useState("");
-  const { addTask } = useKanbanStore();
+  const { addTask } = useTaskActions();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

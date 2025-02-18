@@ -7,7 +7,7 @@ import {
 } from "@/components/ui";
 import { useBoardDelete } from "@/hooks/use-board-delete";
 
-import DeleteBoardDialog from "./delete-board-dialog";
+import CofirmDialog from "./confirm-dialog";
 
 interface BoardActionsDropdownProps {
   boardTitle: string;
@@ -35,7 +35,7 @@ export default function BoardActionsDropdown({
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <DeleteBoardDialog
+      <CofirmDialog
         isOpen={isDialogOpen}
         onClose={closeDialog}
         onConfirm={onDelete}
